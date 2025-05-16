@@ -1,0 +1,215 @@
+:root {
+  --bg: #0a0a0a;
+  --fg: #f5f5f5;
+  --accent: #00ffd5;
+  --hot: #ff2e88;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  overflow-x: hidden;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+#bg-animado {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle at 20% 40%, #001d1a, transparent 60%),
+              radial-gradient(circle at 80% 60%, #1f002a, transparent 60%);
+  z-index: -1;
+  animation: pulse 10s infinite alternate;
+}
+
+@keyframes pulse {
+  0% { filter: blur(40px); }
+  100% { filter: blur(60px); }
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  align-items: center;
+  background: transparent;
+}
+
+.logo {
+  font-size: 0;
+  width: 165px;
+  height: 90px;
+  background-image: url('Logo_de_HolaMente-sin-fondo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--fg);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--hot);
+}
+
+.hero {
+  text-align: center;
+  padding: 6rem 2rem 3rem;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  color: var(--accent);
+}
+
+.hero p {
+  font-size: 1.3rem;
+  max-width: 600px;
+  margin: 1.5rem auto;
+  color: #ccc;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: var(--accent);
+  color: #000;
+  border-radius: 12px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: var(--hot);
+  color: #fff;
+}
+
+.seccion {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: #121212;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 0 20px #000;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px var(--accent);
+}
+
+.card.free {
+  border: 2px dashed var(--hot);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  max-width: 500px;
+  margin: auto;
+}
+
+button {
+  padding: 1rem;
+  background: var(--accent);
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--hot);
+  color: #fff;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: #111;
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease-out;
+}
+
+.btn-sm {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.7rem 1.2rem;
+  background: var(--hot);
+  color: #fff;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn-sm:hover {
+  background: var(--accent);
+  color: #000;
+}
+
+.link-card {
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.link-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 25px var(--hot);
+}
+
+input, textarea {
+  padding: 1rem;
+  border-radius: 10px;
+  border: none;
+  background: #1e1e1e;
+  color: var(--fg);
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
